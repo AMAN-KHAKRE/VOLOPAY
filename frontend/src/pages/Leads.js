@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api, { formatApiError } from "@/lib/api";
 import { toast } from "sonner";
 import { PriorityBadge, StageBadge } from "@/components/Badges";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
@@ -199,6 +199,7 @@ export default function Leads() {
             <DialogTitle className="font-head tracking-tight flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-[#BEF264]" /> New lead
             </DialogTitle>
+            <DialogDescription className="text-[#71717A]">Enter lead details. AI will score and qualify on save.</DialogDescription>
           </DialogHeader>
           <div className="grid grid-cols-2 gap-3 max-h-[60vh] overflow-y-auto crm-scroll pr-1">
             <Input label="Name *" value={form.name} onChange={(v) => setForm({ ...form, name: v })} testid="form-name" />
